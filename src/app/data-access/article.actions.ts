@@ -1,6 +1,6 @@
-import {createAction, props} from "@ngrx/store";
+import {createAction, props} from '@ngrx/store';
 import {Article} from "../shared/article.type";
 
-export const loadArticles = createAction('[Articles] Load');
-
-export const loadArticlesSuccess = createAction('[Articles] Load', props<{ articles: Array<Article> }>());
+export const loadArticles = createAction('[Articles] load');
+export const loadArticlesSuccess = createAction('[Articles] load success', props<{ articles: Array<Article> }>());
+export const reset = createAction('[Counter Component] Reset');

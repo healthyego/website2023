@@ -1,7 +1,17 @@
-import {createReducer, on} from '@ngrx/store';
-import {loadArticles, loadArticlesSuccess, reset} from './article.actions';
-import {Article} from "../shared/article.type";
-import {state} from "@angular/animations";
+import {Injectable} from "@angular/core";
+import {Observable, of} from "rxjs";
+import {Article} from "../../shared/article.type";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ArticleService {
+  constructor () {}
+
+  getAll(): Observable<Array<Article>> {
+    return of(data)
+  }
+}
 
 export const data: Array<Article> = [
   {
@@ -73,23 +83,3 @@ export const data: Array<Article> = [
     }
   }
 ]
-
-export interface state {
-  articles: Array<Article>;
-  filterOptions: Set<string>
-}
-
-export const initialState: state = {
-  articles: [],
-  filterOptions: new Set() //TODO doesnt seem right
-};
-
-export const articleReducer = createReducer(
-  initialState,
-  on(loadArticlesSuccess, (state, {articles}) => ({
-    ...state,
-    articles: articles,
-    filterOptions: new Set(articles.map((it) => it.keywords).flat())
-  })),
-  on(reset, (state) => ({...state, articles: []}))
-);

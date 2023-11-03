@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <h5 class="card-title">{{article.id}}: <strong>{{article.title}}</strong></h5>
+          <p class="card-text">{{article.artists | joinArray: ', '}}</p>
+          <p class="card-text">{{article.description}}</p>
+          <div class="d-flex">
+            <ng-container *ngFor="let tag of article.keywords">
+              <span
+                class="badge m-1"
+                [class.bg-primary]="filters.includes(tag)"
+                [class.bg-black]="!filters.includes(tag)"
+              >{{tag}}</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col-3">
+          <img class="card-img" src="{{article.coverUrl}}" alt="Card image cap">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="d-flex">
+      <ng-container *ngFor="let filter of (filterOptions$ | async )">
+        <button
+          type="button"
+          class="btn btn-primary m-1"
+        >
+          {{filter}}
+        </button>
+      </ng-container>
+    </div>
+
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let article of (articles$ | async )">
+      <app-article-tile [article]="article" [filters]="['music']">
+      </app-article-tile>
+    </ng-container>
+  </div>
+</div>
+
+
+
+
+<button (click)="reset()">Reset Counter</button>
+
+

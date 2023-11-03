@@ -1,4 +1,5 @@
 export type Article = {
+  id: string;
   title: string;
   coverUrl: string;
   keywords: Array<string>;
@@ -7,7 +8,7 @@ export type Article = {
   references: Array<string>;
   dates: {
     startDate: string;
-    endDate: string;
+    endDate: string | null;
   };
   assets: {
     pictureUrls: Array<string>;
