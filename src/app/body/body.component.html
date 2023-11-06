@@ -1,0 +1,15 @@
+<div class="nav">
+  <app-filter-bar
+    [filterOptions]="(filterOptions$ | async) || undefined"
+    [selectedFilter]="(selectedFilter$ | async) || undefined"
+    (toggledFilter)="filterToggled($event)"
+  ></app-filter-bar>
+</div>
+<div class="content">
+  <app-article-collection
+    class="h-100"
+    [articles]="(articles$ | async) || undefined"
+    [selectedFilters]="(selectedFilter$|async) || undefined"
+  >
+  </app-article-collection>
+</div>

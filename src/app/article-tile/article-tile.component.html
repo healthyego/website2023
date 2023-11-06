@@ -10,8 +10,8 @@
             <ng-container *ngFor="let tag of article.keywords">
               <span
                 class="badge m-1"
-                [class.bg-primary]="filters.includes(tag)"
-                [class.bg-black]="!filters.includes(tag)"
+                [class.bg-primary]="filters?.has(tag)"
+                [class.bg-black]="!filters?.has(tag)"
               >{{tag}}</span>
             </ng-container>
           </div>

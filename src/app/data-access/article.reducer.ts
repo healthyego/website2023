@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {loadArticles, loadArticlesSuccess, reset} from './article.actions';
+import {loadArticles, loadArticlesSuccess, reset, toggleFilter} from './article.actions';
 import {Article} from "../shared/article.type";
 import {state} from "@angular/animations";
 
@@ -76,12 +76,14 @@ export const data: Array<Article> = [
 
 export interface state {
   articles: Array<Article>;
-  filterOptions: Set<string>
+  filterOptions: Set<string> | undefined;
+  selectedFilter: Set<string> | undefined;
 }
 
 export const initialState: state = {
   articles: [],
-  filterOptions: new Set() //TODO doesnt seem right
+  filterOptions: undefined,
+  selectedFilter: undefined
 };
 
 export const articleReducer = createReducer(
@@ -91,5 +93,15 @@ export const articleReducer = createReducer(
     articles: articles,
     filterOptions: new Set(articles.map((it) => it.keywords).flat())
   })),
-  on(reset, (state) => ({...state, articles: []}))
+  on(reset, (state) => ({...state, articles: []})),
+  on(toggleFilter, (state, {keyword}) => ({
+    ...state,
+    selectedFilter: addOrRemove(keyword, new Set(state.selectedFilter))
+  }))
 );
+
+function addOrRemove(keyword: string, keywords: Set<string>): Set<string> {
+  keywords.has(keyword) ? keywords.delete(keyword) : keywords.add(keyword)
+  return keywords;
+}
+

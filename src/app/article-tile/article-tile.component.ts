@@ -8,5 +8,5 @@ import {Article} from "../shared/article.type";
 })
 export class ArticleTileComponent {
   @Input() article!: Article;
-  @Input() filters: Array<string> = [];
+  @Input() filters: Set<string> | undefined | null;
 }

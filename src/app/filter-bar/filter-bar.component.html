@@ -1,0 +1,14 @@
+<div class="container d-flex flex-column articles">
+  <div class="d-flex">
+    <ng-container *ngFor="let keyword of filterOptions">
+      <button
+        type="button"
+        class="btn btn-primary m-1"
+        (click)="toggleFilter(keyword)"
+        [class.btn-primary]="selectedFilter?.has(keyword)"
+      >
+        {{keyword}}
+      </button>
+    </ng-container>
+  </div>
+</div>

@@ -13,6 +13,11 @@ import {articleReducer} from "./data-access/article.reducer";
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from "@ngrx/effects";
 import {ArticleEffects} from "./data-access/article.effects";
+import {CdkVirtualForOf, CdkVirtualScrollViewport, ScrollingModule} from "@angular/cdk/scrolling";
+import {CustomDatePipe} from "./shared/pipes/custom-date.pipe";
+import { HeaderComponent } from './header/header.component';
+import { FilterBarComponent } from './filter-bar/filter-bar.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import {ArticleEffects} from "./data-access/article.effects";
     ArticleTileComponent,
     ArticleCollectionComponent,
     JoinArrayPipe,
-    TruncatePipe
+    TruncatePipe,
+    CustomDatePipe,
+    HeaderComponent,
+    FilterBarComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +38,9 @@ import {ArticleEffects} from "./data-access/article.effects";
     StoreModule.forRoot({state: articleReducer}),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     EffectsModule.forRoot(ArticleEffects),
+    CdkVirtualScrollViewport,
+    CdkVirtualForOf,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
