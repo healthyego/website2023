@@ -3,6 +3,7 @@
     [filterOptions]="(filterOptions$ | async) || undefined"
     [selectedFilter]="(selectedFilter$ | async) || undefined"
     (toggledFilter)="filterToggled($event)"
+    class="h-100 w-100"
   ></app-filter-bar>
 </div>
 <div class="content">

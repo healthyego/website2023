@@ -13,4 +13,8 @@ export class FilterBarComponent {
   toggleFilter(keyword: string) {
     this.toggledFilter.emit(keyword)
   }
+
+  goBack() {
+
+  }
 }

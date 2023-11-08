@@ -1,14 +1,27 @@
-<div class="container d-flex flex-column articles">
-  <div class="d-flex">
-    <ng-container *ngFor="let keyword of filterOptions">
-      <button
-        type="button"
-        class="btn btn-primary m-1"
-        (click)="toggleFilter(keyword)"
-        [class.btn-primary]="selectedFilter?.has(keyword)"
-      >
-        {{keyword}}
-      </button>
-    </ng-container>
+<div class="row">
+  <div class="col-3 d-flex justify-content-end">
+    <button
+      type="button"
+      class="btn"
+      (click)="goBack()"
+    >
+      <i class="mdi mdi-keyboard-backspace"></i>
+    </button>
+  </div>
+  <div class="col-9">
+    <div class="d-flex flex-column articles">
+      <div class="d-flex">
+        <ng-container *ngFor="let keyword of filterOptions">
+          <button
+            type="button"
+            class="btn btn-primary m-1"
+            (click)="toggleFilter(keyword)"
+            [class.btn-primary]="selectedFilter?.has(keyword)"
+          >
+            {{keyword}}
+          </button>
+        </ng-container>
+      </div>
+    </div>
   </div>
 </div>
