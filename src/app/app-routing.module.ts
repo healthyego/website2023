@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ArticleCollectionComponent} from "./article-collection/article-collection.component";
 import {ImprintComponent} from "./imprint/imprint.component";
-import {AppComponent} from "./app.component";
-import {ArticleDetailsComponent} from "./article-details/article-details.component";
 import {BodyComponent} from "./body/body.component";
+import {HomeComponent} from "./home/home.component";
+import {ArticleCollectionComponent} from "./article-collection/article-collection.component";
+import {ArticleDetailsComponent} from "./article-details/article-details.component";
 
 
 export enum routesEnum {
@@ -16,10 +16,17 @@ export enum routesEnum {
 
 const routes: Routes = [
   {path: '', redirectTo: '/articles', pathMatch: 'full'},
-  {path: routesEnum.ARTICLES, component: ArticleCollectionComponent},
-  {path: routesEnum.DETAILS, component: ArticleDetailsComponent},
-  {path: routesEnum.IMPRINT, component: ImprintComponent},
-  {path: '**', component: AppComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'imprint', component: ImprintComponent},
+  {
+    path: 'articles',
+    component: BodyComponent,
+    children: [
+      { path: '', component: ArticleCollectionComponent},
+      { path: ':id', component: ArticleDetailsComponent},
+    ]
+  },
+
 ];
 
 

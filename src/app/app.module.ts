@@ -21,6 +21,7 @@ import { BodyComponent } from './body/body.component';
 import {MatIconModule} from "@angular/material/icon";
 import { ImprintComponent } from './imprint/imprint.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
     FilterBarComponent,
     BodyComponent,
     ImprintComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
