@@ -18,6 +18,7 @@ import {CustomDatePipe} from "./shared/pipes/custom-date.pipe";
 import { HeaderComponent } from './header/header.component';
 import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { BodyComponent } from './body/body.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BodyComponent } from './body/body.component';
     EffectsModule.forRoot(ArticleEffects),
     CdkVirtualScrollViewport,
     CdkVirtualForOf,
-    ScrollingModule
+    ScrollingModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

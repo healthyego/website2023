@@ -1,11 +1,17 @@
-<div class="d-flex flex-column h-100">
-  <div class="row" style="flex-grow: 1; overflow-y: auto;">
-    <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="example-viewport">
-      <div *cdkVirtualFor="let article of articles">
-        <app-article-tile [article]="article" [filters]="selectedFilters"></app-article-tile>
+<div class="row h-100">
+  <div class="col-3"></div>
+  <div class="col-5">
+    <div class="d-flex flex-column h-100">
+      <div class="row" style="flex-grow: 1; overflow-y: auto;">
+        <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="example-viewport">
+          <div *cdkVirtualFor="let article of articles">
+            <app-article-tile [article]="article" [filters]="selectedFilters"></app-article-tile>
+          </div>
+        </cdk-virtual-scroll-viewport>
       </div>
-    </cdk-virtual-scroll-viewport>
+    </div>
   </div>
+  <div class="col-4">this works</div>
 </div>
 
 
