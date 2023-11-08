@@ -6,14 +6,6 @@ import {HomeComponent} from "./home/home.component";
 import {ArticleCollectionComponent} from "./article-collection/article-collection.component";
 import {ArticleDetailsComponent} from "./article-details/article-details.component";
 
-
-export enum routesEnum {
-  ARTICLES = 'articles',
-  LIST = 'articles/list',
-  DETAILS = 'articles/:id',
-  IMPRINT = 'imprint',
-}
-
 const routes: Routes = [
   {path: '', redirectTo: '/articles', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -22,8 +14,8 @@ const routes: Routes = [
     path: 'articles',
     component: BodyComponent,
     children: [
-      { path: '', component: ArticleCollectionComponent},
-      { path: ':id', component: ArticleDetailsComponent},
+      {path: '', component: ArticleCollectionComponent},
+      {path: ':id', component: ArticleDetailsComponent},
     ]
   },
 

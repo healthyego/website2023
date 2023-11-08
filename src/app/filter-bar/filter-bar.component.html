@@ -3,13 +3,14 @@
     <button
       type="button"
       class="btn"
-      routerLink="/{{articleRoute}}"
+      routerLink="/articles"
+      *ngIf="!isListView"
     >
       <i class="mdi mdi-keyboard-backspace"></i>
     </button>
   </div>
   <div class="col-9">
-    <div class="d-flex flex-column articles">
+    <div class="d-flex flex-column articles" *ngIf="isListView">
       <div class="d-flex">
         <ng-container *ngFor="let keyword of filterOptions">
           <button

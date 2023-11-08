@@ -2,10 +2,11 @@
   <app-filter-bar
     [filterOptions]="(filterOptions$ | async) || undefined"
     [selectedFilter]="(selectedFilter$ | async) || undefined"
+    [isListView]="isListView"
     (toggledFilter)="filterToggled($event)"
     class="h-100 w-100"
   ></app-filter-bar>
 </div>
 <div class="content">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
