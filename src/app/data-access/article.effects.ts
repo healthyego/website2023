@@ -4,7 +4,6 @@ import {EMPTY, withLatestFrom} from 'rxjs';
 import {catchError, exhaustMap, map} from 'rxjs/operators';
 import {ArticleService} from "../article-collection/service/article.service";
 import {loadArticles, loadArticlesSuccess, toggleFilter} from "./article.actions";
-import {Article} from "../shared/article.type";
 import {Store} from "@ngrx/store";
 import {selectSelectedFilter} from "./article.selector";
 
@@ -24,7 +23,7 @@ export class ArticleEffects {
   constructor(
     private actions$: Actions,
     private articleService: ArticleService,
-    private store: Store
+    private store: Store,
   ) {
   }
 }

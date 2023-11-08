@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {routesEnum} from "../app-routing.module";
 
 @Component({
   selector: 'app-filter-bar',
@@ -6,6 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./filter-bar.component.scss']
 })
 export class FilterBarComponent {
+  articleRoute =  routesEnum.ARTICLES
   @Input() filterOptions: Set<string> | undefined;
   @Input() selectedFilter: Set<string> | undefined;
   @Output() toggledFilter = new EventEmitter<string>();

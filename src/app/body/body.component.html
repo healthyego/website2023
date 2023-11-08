@@ -7,10 +7,5 @@
   ></app-filter-bar>
 </div>
 <div class="content">
-  <app-article-collection
-    class="h-100"
-    [articles]="(articles$ | async) || undefined"
-    [selectedFilters]="(selectedFilter$|async) || undefined"
-  >
-  </app-article-collection>
+    <router-outlet></router-outlet>
 </div>

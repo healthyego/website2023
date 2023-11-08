@@ -1,5 +1,9 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {Article} from "../shared/article.type";
+import {Observable} from "rxjs";
+import {selectArticles, selectSelectedFilter} from "../data-access/article.selector";
+import {Store} from "@ngrx/store";
+import {state} from "../data-access/article.reducer";
 
 
 @Component({
@@ -8,10 +12,9 @@ import {Article} from "../shared/article.type";
   styleUrls: ['./article-collection.component.scss'],
 })
 export class ArticleCollectionComponent {
-  @Input() articles: Array<Article> | undefined;
-  @Input() selectedFilters: Set<string> | undefined;
-  @Output() selectedArticle = new EventEmitter<Article>()
+  articles$: Observable<Array<Article>> = this.store.select(selectArticles)
+  selectedFilters$: Observable<Set<string> | undefined> = this.store.select(selectSelectedFilter)
 
-  constructor() {
+  constructor(private store: Store<{ state: state }>) {
   }
 }

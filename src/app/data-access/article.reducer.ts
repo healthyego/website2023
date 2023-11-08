@@ -27,7 +27,7 @@ export const articleReducer = createReducer(
       ...state,
       selectedFilter: addOrRemove(keyword, new Set(state.selectedFilter))
     })
-  )
+  ),
 );
 
 function addOrRemove(keyword: string, keywords: Set<string>): Set<string> {

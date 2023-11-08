@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { FilterBarComponent } from './filter-bar/filter-bar.component';
 import { BodyComponent } from './body/body.component';
 import {MatIconModule} from "@angular/material/icon";
+import { ImprintComponent } from './imprint/imprint.component';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {MatIconModule} from "@angular/material/icon";
     CustomDatePipe,
     HeaderComponent,
     FilterBarComponent,
-    BodyComponent
+    BodyComponent,
+    ImprintComponent,
+    ArticleDetailsComponent
   ],
   imports: [
     BrowserModule,
