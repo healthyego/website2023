@@ -5,13 +5,18 @@ export type Article = {
   keywords: Array<string>;
   artists: Array<string>;
   description: string;
-  references: Array<string>;
+  references: Array<Reference>;
   dates: {
-    startDate: string;
-    endDate: string | null;
+    startDate: Date;
+    endDate: Date | null;
   };
   assets: {
     pictureUrls: Array<string>;
     videoUrls: Array<string>;
   }
+}
+
+export type Reference = {
+  name: string;
+  url: string
 }

@@ -1,40 +1,47 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subscription} from "rxjs";
-import {selectFilterOptions, selectSelectedFilter} from "../data-access/article.selector";
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Observable, take} from "rxjs";
+import {selectFilterOptions, selectSelectedArticle, selectSelectedFilter} from "../data-access/article.selector";
 import {Store} from "@ngrx/store";
-import {loadArticles, toggleFilter} from "../data-access/article.actions";
+import {loadArticleById, loadArticles, toggleFilter, unselectArticle} from "../data-access/article.actions";
 import {state} from "../data-access/article.reducer";
-import {NavigationEnd, Router} from "@angular/router";
+import {Article} from "../shared/article.type";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
-  styleUrls: ['./body.component.scss']
+  styleUrls: ['./body.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BodyComponent implements OnInit, OnDestroy {
-  private routerSubscription: Subscription | undefined;
-  isListView: boolean | undefined
+export class BodyComponent implements OnInit {
   filterOptions$: Observable<Set<string> | undefined> = this.store.select(selectFilterOptions)
   selectedFilter$: Observable<Set<string> | undefined> = this.store.select(selectSelectedFilter)
+  selectedArticle$: Observable<Article | undefined> | undefined
 
-  constructor(private store: Store<{ state: state }>, private router: Router) {
-    this.store.dispatch(loadArticles());
+  constructor(private store: Store<{ state: state }>, private activatedRoute: ActivatedRoute,
+  ) {
+  }
+
+  ngOnInit(): void {
+    //TODO: not too nice,
+    // would rather have it in the effect,
+    // but the activatedRoute is not available
+
+    this.activatedRoute.firstChild?.paramMap
+      .pipe(take(1))
+      .subscribe(params => {
+        const id = params.get('id');
+        id ? this.store.dispatch(loadArticleById({id})) : this.store.dispatch(loadArticles());
+      });
+
+    this.selectedArticle$ = this.store.select(selectSelectedArticle)
   }
 
   filterToggled($event: string) {
     this.store.dispatch(toggleFilter({keyword: $event}))
   }
 
-  ngOnInit() {
-    //TODO I dont really like this
-    this.routerSubscription = this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isListView = event.url === '/articles';
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.routerSubscription?.unsubscribe()
+  unselectArticle() {
+    this.store.dispatch(unselectArticle())
   }
 }

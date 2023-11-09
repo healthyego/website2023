@@ -2,8 +2,9 @@
   <app-filter-bar
     [filterOptions]="(filterOptions$ | async) || undefined"
     [selectedFilter]="(selectedFilter$ | async) || undefined"
-    [isListView]="isListView"
+    [isArticleSelected]="(selectedArticle$ | async) != undefined"
     (toggledFilter)="filterToggled($event)"
+    (goBack)="unselectArticle()"
     class="h-100 w-100"
   ></app-filter-bar>
 </div>

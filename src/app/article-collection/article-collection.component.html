@@ -8,6 +8,7 @@
             <app-article-tile
               [article]="article"
               [filters]="(selectedFilters$|async)"
+              (selectedArticle)="selectArticle($event)"
             ></app-article-tile>
           </div>
         </cdk-virtual-scroll-viewport>

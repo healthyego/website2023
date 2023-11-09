@@ -1,1 +1,37 @@
-<p>{{(selectedArticles$|async)?.title}}</p>
+<ng-container class="h-100" *ngIf="(selectedArticles$|async) as article">
+  <div class="row h-100">
+    <div class="col-3 h-100">
+      <h1>{{article.title}}</h1>
+      <p>{{article.artists | joinArray: ','}}</p>
+      <p>{{article.dates.startDate | customDate: true}}
+        {{ article.dates.endDate ? ' - ' + (article.dates.endDate | customDate: true) : null}}</p>
+    </div>
+
+    <div class="col-9 h-100">
+      <div class="h-100 content-scroll-container">
+        <div class="row h-50 mb-5">
+          <div class="vertical-scroll-container">
+            <img *ngFor="let imageUrl of article.assets.pictureUrls; let i = index" [src]="imageUrl">
+          </div>
+        </div>
+        <div class="row h-50">
+          <div class="row h-50">
+            <div class="col-9">
+              <div style="text-align: justify;" [innerHTML]="article.description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-bottom fixed-end text-end p-3 small">
+    <div *ngFor="let ref of article.references">
+      <a href="{{ref.url}}">{{ref.name}}</a>
+    </div>
+  </div>
+</ng-container>
+
+
+
+
+

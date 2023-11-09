@@ -1,4 +1,4 @@
-import {NgModule, isDevMode} from '@angular/core';
+import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -15,13 +15,12 @@ import {EffectsModule} from "@ngrx/effects";
 import {ArticleEffects} from "./data-access/article.effects";
 import {CdkVirtualForOf, CdkVirtualScrollViewport, ScrollingModule} from "@angular/cdk/scrolling";
 import {CustomDatePipe} from "./shared/pipes/custom-date.pipe";
-import { HeaderComponent } from './header/header.component';
-import { FilterBarComponent } from './filter-bar/filter-bar.component';
-import { BodyComponent } from './body/body.component';
-import {MatIconModule} from "@angular/material/icon";
-import { ImprintComponent } from './imprint/imprint.component';
-import { ArticleDetailsComponent } from './article-details/article-details.component';
-import { HomeComponent } from './home/home.component';
+import {HeaderComponent} from './header/header.component';
+import {FilterBarComponent} from './filter-bar/filter-bar.component';
+import {BodyComponent} from './body/body.component';
+import {ImprintComponent} from './imprint/imprint.component';
+import {ArticleDetailsComponent} from './article-details/article-details.component';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { HomeComponent } from './home/home.component';
     CdkVirtualScrollViewport,
     CdkVirtualForOf,
     ScrollingModule,
-    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

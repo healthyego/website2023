@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'customDate'
 })
 export class CustomDatePipe implements PipeTransform {
-  transform(value: Date): string {
+  transform(value: Date, dateOnly: boolean = false): string {
     if (!value) {
       return '';
     }
@@ -21,6 +21,7 @@ export class CustomDatePipe implements PipeTransform {
     //const offsetString = `UTC ${offsetSign}${offsetHours}:${offsetMinutesPart}`;
     const offsetString = `UTC ${offsetSign}${offsetHours}`;
 
-    return `${day} ${month} ${year}<br>${hours} ${minutes} ${offsetString}`;
+
+    return dateOnly ? `${day} ${month} ${year}` : `${day} ${month} ${year}<br>${hours} ${minutes} ${offsetString}`;
   }
 }
