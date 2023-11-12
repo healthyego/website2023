@@ -3,15 +3,16 @@
     <div class="col-3 h-100">
       <h1>{{article.title}}</h1>
       <p>{{article.artists | joinArray: ','}}</p>
-      <p>{{article.dates.startDate | customDate: true}}
-        {{ article.dates.endDate ? ' - ' + (article.dates.endDate | customDate: true) : null}}</p>
+      <p>{{article.dates.startDate}}
+        {{ article.dates.endDate ? ' - ' + article.dates.endDate  : null}}</p>
     </div>
 
     <div class="col-9 h-100">
       <div class="h-100 content-scroll-container">
         <div class="row h-50 mb-5">
-          <div class="vertical-scroll-container">
-            <img *ngFor="let imageUrl of article.assets.pictureUrls; let i = index" [src]="imageUrl">
+          <div class="vertical-scroll-container d-flex">
+              <iframe *ngFor="let videoUrl of article.assets.videoUrls" [src]="videoUrl | safeUrl" allowfullscreen></iframe>
+              <img *ngFor="let imageUrl of article.assets.pictureUrls" [src]="imageUrl" style="width: 100%;">
           </div>
         </div>
         <div class="row h-50">

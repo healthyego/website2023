@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {concatMap, EMPTY, switchMap, tap, withLatestFrom} from 'rxjs';
 import {catchError, exhaustMap, map} from 'rxjs/operators';
-import {ArticleService} from "../article-collection/service/article.service";
+import {ArticleService} from "../shared/service/article.service";
 import {
   generalFailureAction,
   loadArticleById,

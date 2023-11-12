@@ -11,6 +11,7 @@ import {state} from "../data-access/article.reducer";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArticleDetailsComponent {
+
   selectedArticles$ = this.store.select(selectSelectedArticle)
 
   constructor(

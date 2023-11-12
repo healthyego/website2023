@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {loadArticlesSuccess, selectArticle, toggleFilter} from './article.actions';
+import {loadArticlesSuccess, selectArticle, toggleFilter, unselectArticle} from './article.actions';
 import {Article} from "../shared/article.type";
 import {state} from "@angular/animations";
 
@@ -37,6 +37,13 @@ export const articleReducer = createReducer(
       ...state,
       selectedArticle: article,
       filterOptions: new Set(article.keywords),
+    })
+  ),
+  on(unselectArticle, (state) =>
+    ({
+      ...state,
+      selectedArticle: undefined,
+      selectedFilter: undefined
     })
   )
 );

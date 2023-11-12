@@ -21,6 +21,8 @@ import {BodyComponent} from './body/body.component';
 import {ImprintComponent} from './imprint/imprint.component';
 import {ArticleDetailsComponent} from './article-details/article-details.component';
 import {HomeComponent} from './home/home.component';
+import {UrlSanitizerPipe} from "./shared/pipes/url-sanitizer.pipe";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import {HomeComponent} from './home/home.component';
     JoinArrayPipe,
     TruncatePipe,
     CustomDatePipe,
+    UrlSanitizerPipe,
     HeaderComponent,
     FilterBarComponent,
     BodyComponent,
@@ -39,6 +42,7 @@ import {HomeComponent} from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CommonModule,
     StoreModule.forRoot({state: articleReducer}),
