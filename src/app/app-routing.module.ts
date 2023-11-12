@@ -8,7 +8,7 @@ import {ArticleDetailsComponent} from "./article-details/article-details.compone
 
 const routes: Routes = [
   {path: '', redirectTo: '/articles', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
+  {path: 'home', redirectTo: '/articles'},
   {path: 'imprint', component: ImprintComponent},
   {
     path: 'articles',
@@ -18,7 +18,7 @@ const routes: Routes = [
       {path: ':id', component: ArticleDetailsComponent},
     ]
   },
-
+  {path: '**', redirectTo: '/articles', pathMatch: 'full'},
 ];
 
 

@@ -1,7 +1,27 @@
-.card-selectable {
+.article-selectable {
   cursor: pointer;
 }
 
-.card-selectable:hover {
+.article-selectable:hover {
   background-color: blue;
+  color: white;
+  font-weight: bold;
 }
+
+.article-selectable:hover .selected {
+  border: 1px solid white;
+}
+
+.outline {
+  border: 1px solid black;
+  color: black;
+  font-weight: normal;
+}
+
+.selected {
+  border: 1px solid blue;
+  background-color: blue;
+  color: white;
+  font-weight: normal;
+}
+

@@ -1,3 +1,10 @@
-.header{
+.header {
   height: var(--header-height);
 }
+
+.background {
+  background-image: url('https://www.healthyego.studio/veranstaltungen/konkretmedia/konkret_bild1.jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* Adjust the background size as needed */
+  background-position: center; /* Center the background image */
+}
+

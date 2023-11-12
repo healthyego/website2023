@@ -1,9 +1,15 @@
+$primary: blue;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+
 :root {
   --header-height: 30vh;
   --body-height: calc(100vh - var(--header-height));
   --content-height: calc(var(--body-height) * 0.9);
   --nav-bar-height: calc(var(--body-height) * 0.1);
 }
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

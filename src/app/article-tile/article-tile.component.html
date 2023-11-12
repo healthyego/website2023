@@ -1,28 +1,24 @@
-<div class="card card-selectable" (click)="onSelect(article)">
-  <div class="card-body">
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <h5 class="card-title">{{article.id}}: <strong>{{article.title}}</strong></h5>
-          <p class="card-text">{{article.artists | joinArray: ', '}}</p>
-          <p class="card-text">{{article.description}}</p>
-          <div class="d-flex">
-            <ng-container *ngFor="let tag of article.keywords">
-              <span
-                class="badge m-1"
-                [class.bg-primary]="filters?.has(tag)"
-                [class.bg-black]="!filters?.has(tag)"
-              >{{tag}}</span>
-            </ng-container>
-          </div>
-        </div>
-        <div class="col-3">
-          <img class="card-img" src="{{article.coverUrl}}" alt="Card image cap">
-        </div>
-      </div>
-    </div>
+<hr>
+<div
+  class="row article-selectable"
+  (mouseenter)="onMouseEnter(article.coverUrl)"
+  (click)="onSelect(article)"
+>
+  <div class="col-2">{{article.id}}</div>
+  <div class="col-2">{{article.title}}</div>
+  <div class="col-3">{{article.artists | joinArray: ', '}}</div>
+  <div class="col-3">
+    <ng-container *ngFor="let tag of article.keywords">
+      <span
+        class="badge rounded-pill m-1"
+        [class.selected]="filters?.has(tag)"
+        [class.outline]="!filters?.has(tag)"
+      >{{tag}}</span>
+    </ng-container>
   </div>
+  <div class="col-2">{{article.dates.startDate | customDate: true}}</div>
 </div>
+
 
 
 

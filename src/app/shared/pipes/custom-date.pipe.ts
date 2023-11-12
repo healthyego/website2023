@@ -4,10 +4,12 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'customDate'
 })
 export class CustomDatePipe implements PipeTransform {
-  transform(value: Date, dateOnly: boolean = false): string {
-    if (!value) {
+  transform(_value: Date | string, dateOnly: boolean = false): string {
+    if (!_value) {
       return '';
     }
+
+    const value: Date = typeof _value === 'string' ? new Date(_value) : _value;
 
     const day = String(value.getDate()).padStart(2, '0');
     const month = String(value.getMonth() + 1).padStart(2, '0');

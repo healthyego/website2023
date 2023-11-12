@@ -1,24 +1,33 @@
 <ng-container class="h-100" *ngIf="(selectedArticles$|async) as article">
   <div class="row h-100">
     <div class="col-3 h-100">
-      <h1>{{article.title}}</h1>
-      <p>{{article.artists | joinArray: ','}}</p>
-      <p>{{article.dates.startDate}}
-        {{ article.dates.endDate ? ' - ' + article.dates.endDate  : null}}</p>
+      <div class="info-text p-4">
+        <strong>{{article.id}}</strong>:
+        <strong>{{article.title}}</strong>
+        <hr class="white-line">
+        <small><i>by: </i></small>{{article.artists | joinArray: ', '}}
+        <br>
+        <small><i *ngIf="article.dates.endDate">from: </i></small>
+        {{(article.dates.startDate) | customDate: true}}
+        <br>
+        <small><i *ngIf="article.dates.endDate">to: </i></small>
+        {{ article.dates.endDate ? (article.dates.endDate | customDate: true) : null}}
+      </div>
     </div>
 
-    <div class="col-9 h-100">
+    <div class="col-9 h-100 p-0">
       <div class="h-100 content-scroll-container">
         <div class="row h-50 mb-5">
           <div class="vertical-scroll-container d-flex">
-              <iframe *ngFor="let videoUrl of article.assets.videoUrls" [src]="videoUrl | safeUrl" allowfullscreen></iframe>
-              <img *ngFor="let imageUrl of article.assets.pictureUrls" [src]="imageUrl" style="width: 100%;">
+            <iframe *ngFor="let videoUrl of article.assets.videoUrls" [src]="videoUrl | safeUrl"
+                    allowfullscreen></iframe>
+            <img *ngFor="let imageUrl of article.assets.pictureUrls" [src]="imageUrl" style="width: 100%;">
           </div>
         </div>
         <div class="row h-50">
           <div class="row h-50">
             <div class="col-9">
-              <div style="text-align: justify;" [innerHTML]="article.description"></div>
+              <div class="description" [innerHTML]="article.description"></div>
             </div>
           </div>
         </div>

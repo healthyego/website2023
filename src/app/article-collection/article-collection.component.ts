@@ -17,10 +17,16 @@ export class ArticleCollectionComponent {
   articles$: Observable<Array<Article>> = this.store.select(selectArticles)
   selectedFilters$: Observable<Set<string> | undefined> = this.store.select(selectSelectedFilter)
 
+  coverUrl: string | undefined
+
   constructor(private store: Store<{ state: state }>) {
   }
 
   selectArticle($event: Article) {
     this.store.dispatch(selectArticle({article: $event}))
+  }
+
+  displayCover($event: string){
+    this.coverUrl = $event
   }
 }

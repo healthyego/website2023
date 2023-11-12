@@ -9,15 +9,16 @@
       <i class="mdi mdi-keyboard-backspace"></i>
     </button>
   </div>
-  <div class="col-9">
+  <div class="col-9 p-0">
     <div class="d-flex flex-column articles">
       <div class="d-flex">
         <ng-container *ngFor="let keyword of filterOptions">
           <button
             type="button"
-            class="btn btn-primary m-1"
+            class="btn btn-outline-dark"
+            style="margin-right: 0.5rem"
             (click)="toggleFilter(keyword)"
-            [class.btn-primary]="selectedFilter?.has(keyword)"
+            [class.btn-selected]="selectedFilter?.has(keyword)"
             [disabled]="isArticleSelected"
           >
             {{keyword}}
