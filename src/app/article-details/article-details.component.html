@@ -1,5 +1,5 @@
 <ng-container class="h-100" *ngIf="(selectedArticles$|async) as article">
-  <div class="row h-100">
+  <div class="row h-100 w-100">
     <div class="col-3 h-100">
       <div class="info-text p-4">
         <strong>{{article.id}}</strong>:
@@ -17,7 +17,7 @@
 
     <div class="col-9 h-100 p-0">
       <div class="h-100 content-scroll-container">
-        <div class="row h-50 mb-5">
+        <div class="row h-50 mb-5 w-100">
           <div class="vertical-scroll-container d-flex">
             <iframe
               *ngFor="let videoUrl of article.assets.videoUrls"
@@ -32,8 +32,8 @@
               [src]="imageUrl">
           </div>
         </div>
-        <div class="row h-50">
-          <div class="row h-50">
+        <div class="row h-50 w-100">
+          <div class="row h-50 w-100">
             <div class="col-9">
               <div class="description" [innerHTML]="article.description"></div>
             </div>

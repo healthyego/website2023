@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {Article} from "../article.type";
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
@@ -18,8 +18,11 @@ export class ArticleService {
   }
 
   getFiltered(filters: Set<string> | undefined): Observable<Article[]> {
+    //necessary for showing everything on deselecting filters
+    const shouldFilter = filters ? filters.size > 0 : false
+
     return this.getAll().pipe(
-      map((articles) => (filters ? this.orFilter(articles, filters) : articles))
+      map((articles) => ((shouldFilter) ? this.orFilter(articles, filters!!) : articles))
     );
   }
 
@@ -35,7 +38,6 @@ export class ArticleService {
     });
   }
 
-  //TODO: get this to work with filterbar
   orFilter(articles: Array<Article>, filters: Set<string>): Array<Article> {
     return articles.filter((article) => {
       return Array.from(filters).some((filter) => article.keywords.includes(filter));
