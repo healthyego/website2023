@@ -11,7 +11,7 @@ export class ArticleTileComponent {
   @Input() article!: Article;
   @Input() filters: Set<string> | undefined | null;
   @Output() selectedArticle = new EventEmitter<Article>()
-  @Output() coverOfHovered = new EventEmitter<string>()
+  @Output() coverOfHovered = new EventEmitter<string | null>()
   isHovered: boolean= false
 
   onSelect(article: Article) {
@@ -19,5 +19,9 @@ export class ArticleTileComponent {
   }
   onMouseEnter(url: string){
     this.coverOfHovered.emit(url)
+  }
+
+  onMouseLeave(){
+    this.coverOfHovered.emit(null)
   }
 }

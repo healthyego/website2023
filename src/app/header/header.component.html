@@ -1,22 +1,15 @@
-<div class="header" [class.background]="(imprintRouteSubject|async)">
+<div class="header" [class.background]="imprintRouteSubject|async">
   <div class="row h-100">
-    <div class="col-6 d-flex align-items-center">
-      <div class="row">
-        <div class="col d-flex align-items-center justify-content-center">
-          <p [innerHTML]="this.currentTime | customDate"></p>
-        </div>
-        <div class="col d-flex align-items-center">
-          <a routerLink="/home">
-            <img class="w-100" src="./assets/HE-Logo.png" alt="HE-Logo">
-          </a>
-        </div>
-        <div class="col d-flex align-items-center">
-          <a routerLink="/imprint">
-            <img class="w-100" src="./assets/HE-Label.png" alt="HE-Label">
-          </a>
-        </div>
-      </div>
+    <div class="col-3 d-flex align-items-center justify-content-center">
+      <p [innerHTML]="this.currentTime | customDate"></p>
     </div>
-    <div class="col-6"></div>
+    <div class="col-3 h-100 d-flex align-items-center p-0">
+      <a routerLink="{{(imprintRouteSubject|async)?'/articles': '/imprint'}}" class="h-50">
+        <img
+          class="h-100"
+          src="{{(imprintRouteSubject|async)?'./assets/HE-Logo_white.png': './assets/HE-Logo.png'}}"
+          alt="HE-Logo">
+      </a>
+    </div>
   </div>
 </div>

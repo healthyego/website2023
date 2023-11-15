@@ -19,7 +19,7 @@ export class ArticleService {
 
   getFiltered(filters: Set<string> | undefined): Observable<Article[]> {
     return this.getAll().pipe(
-      map((articles) => (filters ? this.filter(articles, filters) : articles))
+      map((articles) => (filters ? this.orFilter(articles, filters) : articles))
     );
   }
 
@@ -29,9 +29,16 @@ export class ArticleService {
     );
   }
 
-  filter(articles: Array<Article>, filters: Set<string>): Array<Article> {
+  andFilter(articles: Array<Article>, filters: Set<string>): Array<Article> {
     return articles.filter((article) => {
       return Array.from(filters).every((filter) => article.keywords.includes(filter));
+    });
+  }
+
+  //TODO: get this to work with filterbar
+  orFilter(articles: Array<Article>, filters: Set<string>): Array<Article> {
+    return articles.filter((article) => {
+      return Array.from(filters).some((filter) => article.keywords.includes(filter));
     });
   }
 }

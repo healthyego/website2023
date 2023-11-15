@@ -1,7 +1,8 @@
-<hr>
+
 <div
-  class="row article-selectable"
+  class="row article-selectable mt-3"
   (mouseenter)="onMouseEnter(article.coverUrl)"
+  (mouseleave)="onMouseLeave()"
   (click)="onSelect(article)"
 >
   <div class="col-2">{{article.id}}</div>
@@ -16,7 +17,7 @@
       >{{tag}}</span>
     </ng-container>
   </div>
-  <div class="col-2">{{article.dates.startDate | customDate: true}}</div>
+  <div class="col-2">{{article.dates.startDate | yearPipe}}</div>
 </div>
 
 

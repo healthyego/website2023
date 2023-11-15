@@ -8,4 +8,12 @@
   color: white;
   border-color: blue;
   font-weight: bold;
+  border-radius: var(--bs-border-radius-pill) !important;
+
+}
+
+.btn-outline-dark{
+  border-radius: var(--bs-border-radius-pill) !important;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }

@@ -1,6 +1,12 @@
 <div class="row h-100">
-  <div class="col-3"></div>
-  <div class="col-6">
+  <div class="col-3 h-100 pl-3">
+    <img
+      *ngIf="coverUrl"
+      class="card-img cover"
+      src="{{coverUrl}}"
+      alt="Card image cap">
+  </div>
+  <div class="col">
     <div class="d-flex flex-column h-100">
       <div class="row" style="flex-grow: 1; overflow-y: auto;">
         <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="example-viewport">
@@ -16,9 +22,7 @@
       </div>
     </div>
   </div>
-  <div class="col-3 h-100 p-0">
-    <img style="margin-top: 1rem; max-height: calc(100% - 1rem)" *ngIf="coverUrl" class="card-img" src="{{coverUrl}}" alt="Card image cap">
-  </div>
+
 </div>
 
 

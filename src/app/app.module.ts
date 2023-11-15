@@ -23,6 +23,7 @@ import {ArticleDetailsComponent} from './article-details/article-details.compone
 import {HomeComponent} from './home/home.component';
 import {UrlSanitizerPipe} from "./shared/pipes/url-sanitizer.pipe";
 import {HttpClientModule} from "@angular/common/http";
+import {YearPipe} from "./shared/pipes/year.pipe";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {HttpClientModule} from "@angular/common/http";
     ArticleTileComponent,
     ArticleCollectionComponent,
     JoinArrayPipe,
+    YearPipe,
     TruncatePipe,
     CustomDatePipe,
     UrlSanitizerPipe,

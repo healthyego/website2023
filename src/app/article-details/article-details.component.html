@@ -19,9 +19,17 @@
       <div class="h-100 content-scroll-container">
         <div class="row h-50 mb-5">
           <div class="vertical-scroll-container d-flex">
-            <iframe *ngFor="let videoUrl of article.assets.videoUrls" [src]="videoUrl | safeUrl"
-                    allowfullscreen></iframe>
-            <img *ngFor="let imageUrl of article.assets.pictureUrls" [src]="imageUrl" style="width: 100%;">
+            <iframe
+              *ngFor="let videoUrl of article.assets.videoUrls"
+              [src]="videoUrl | safeUrl"
+              allowfullscreen
+              class="content"
+            >
+            </iframe>
+            <img
+              *ngFor="let imageUrl of article.assets.pictureUrls"
+              class="content"
+              [src]="imageUrl">
           </div>
         </div>
         <div class="row h-50">
@@ -32,11 +40,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="fixed-bottom fixed-end text-end p-3 small">
-    <div *ngFor="let ref of article.references">
-      <a href="{{ref.url}}">{{ref.name}}</a>
     </div>
   </div>
 </ng-container>

@@ -7,7 +7,7 @@ import {
   generalFailureAction,
   loadArticleById,
   loadArticles,
-  loadArticlesByFilter,
+  loadArticlesByFilter, loadArticlesByFilterSuccess,
   loadArticlesSuccess,
   selectArticle,
   toggleFilter,
@@ -56,7 +56,7 @@ export class ArticleEffects {
       ofType(loadArticlesByFilter),
       exhaustMap(({keywords}) =>
         this.articleService.getFiltered(keywords).pipe(
-          map(articles => loadArticlesSuccess({articles})),
+          map(articles => loadArticlesByFilterSuccess({articles})),
           catchError(() => EMPTY)
         )
       )

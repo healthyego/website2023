@@ -1,13 +1,13 @@
-.headline{
+.headline {
   font-weight: bolder;
 }
 
-.sub-headline{
+.sub-headline {
   font-weight: normal;
   font-style: italic;
 }
 
-.description{
+.description {
   text-align: justify;
 }
 
@@ -16,8 +16,14 @@
   overflow-y: auto;
 }
 
-.icons{
+.icons {
   color: white;
   font-size: 30px;
   padding-right: 0.5rem;
+}
+
+.imprint {
+  background: black;
+  height: var(--body-height);
+  color: white
 }
