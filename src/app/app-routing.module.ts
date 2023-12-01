@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ImprintComponent} from "./imprint/imprint.component";
 import {BodyComponent} from "./body/body.component";
-import {HomeComponent} from "./home/home.component";
 import {ArticleCollectionComponent} from "./article-collection/article-collection.component";
 import {ArticleDetailsComponent} from "./article-details/article-details.component";
+import {ScreenSizeGuard} from "./shared/guard/screen-size-guard.service";
 
 const routes: Routes = [
   {path: '', redirectTo: '/articles', pathMatch: 'full'},
@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: 'articles',
     component: BodyComponent,
+    canActivate: [ScreenSizeGuard],
     children: [
       {path: '', component: ArticleCollectionComponent},
       {path: ':id', component: ArticleDetailsComponent},

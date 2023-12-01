@@ -1,5 +1,5 @@
-<div class="row h-100 w-100">
-  <div class="col-3 h-100 pl-3">
+<div *ngrxLet="isMobileView$ as isMobile" class="row h-100 w-100">
+  <div class="h-100 pl-3" [class.col-1]="isMobile" [class.col-3]="!isMobile">
     <img
       *ngIf="coverUrl"
       class="card-img cover"

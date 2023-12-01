@@ -1,5 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import {
+  enableMobileView,
   loadArticlesByFilterSuccess,
   loadArticlesSuccess,
   selectArticle,
@@ -14,13 +15,15 @@ export interface state {
   selectedArticle: Article | undefined;
   filterOptions: Set<string> | undefined;
   selectedFilter: Set<string> | undefined;
+  isMobileView: boolean;
 }
 
 export const initialState: state = {
   articles: [],
   filterOptions: undefined,
   selectedFilter: undefined,
-  selectedArticle: undefined
+  selectedArticle: undefined,
+  isMobileView: false,
 };
 
 export const articleReducer = createReducer(
@@ -57,7 +60,13 @@ export const articleReducer = createReducer(
       selectedArticle: undefined,
       selectedFilter: undefined
     })
-  )
+  ),
+  on(enableMobileView, (state) =>
+    ({
+      ...state,
+      isMobileView: true,
+    })
+  ),
 );
 
 function addOrRemove(keyword: string, keywords: Set<string>): Set<string> {

@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       filter(event => event instanceof NavigationEnd),
       map(() => this.router.url.includes('imprint'))
     ).subscribe(hasImprint => {
-      console.log(hasImprint)
       this.imprintRouteSubject.next(hasImprint);
     });
   }

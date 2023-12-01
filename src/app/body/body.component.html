@@ -1,4 +1,4 @@
-<div class="nav">
+<div [class.nav]="!(isMobileView$ |async)">
   <app-filter-bar
     [filterOptions]="(filterOptions$ | async) || undefined"
     [selectedFilter]="(selectedFilter$ | async) || undefined"

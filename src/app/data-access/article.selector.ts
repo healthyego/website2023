@@ -6,3 +6,4 @@ export const selectArticles = createSelector(selectFeature, (state) => state.art
 export const selectSelectedArticle = createSelector(selectFeature, (state) => state.selectedArticle);
 export const selectFilterOptions = createSelector(selectFeature, (state) => state.filterOptions);
 export const selectSelectedFilter = createSelector(selectFeature, (state) => state.selectedFilter);
+export const selectIsMobileView = createSelector(selectFeature, (state) => state.isMobileView);

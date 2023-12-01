@@ -1,6 +1,12 @@
-<ng-container class="h-100" *ngIf="(selectedArticles$|async) as article">
-  <div class="row h-100 w-100">
-    <div class="col-3 h-100">
+<ng-container
+  class="h-100"
+  *ngIf="(selectedArticles$|async) as article"
+>
+  <div
+    class="row h-100 w-100"
+    *ngrxLet="isMobileView$ as isMobile"
+  >
+    <div [class.col-3]="!isMobile">
       <div class="info-text p-4">
         <strong>{{article.id}}</strong>:
         <strong>{{article.title}}</strong>
@@ -15,7 +21,9 @@
       </div>
     </div>
 
-    <div class="col-9 h-100 p-0">
+    <div *ngIf="isMobile" class="col-1"></div>
+
+    <div class="col-9 h-100 p-0" [class.col-11]="isMobile">
       <div class="h-100 content-scroll-container">
         <div class="row h-50 mb-5 w-100">
           <div class="vertical-scroll-container d-flex">
@@ -34,7 +42,7 @@
         </div>
         <div class="row h-50 w-100">
           <div class="row h-50 w-100">
-            <div class="col-9">
+            <div [class.col-9]="!isMobile">
               <div class="description" [innerHTML]="article.description"></div>
             </div>
           </div>

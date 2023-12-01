@@ -1,6 +1,11 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable, take} from "rxjs";
-import {selectFilterOptions, selectSelectedArticle, selectSelectedFilter} from "../data-access/article.selector";
+import {
+  selectFilterOptions,
+  selectIsMobileView,
+  selectSelectedArticle,
+  selectSelectedFilter
+} from "../data-access/article.selector";
 import {Store} from "@ngrx/store";
 import {loadArticleById, loadArticles, toggleFilter, unselectArticle} from "../data-access/article.actions";
 import {state} from "../data-access/article.reducer";
@@ -14,6 +19,7 @@ import {ActivatedRoute} from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BodyComponent implements OnInit {
+  isMobileView$: Observable<boolean> = this.store.select(selectIsMobileView)
   filterOptions$: Observable<Set<string> | undefined> = this.store.select(selectFilterOptions)
   selectedFilter$: Observable<Set<string> | undefined> = this.store.select(selectSelectedFilter)
   selectedArticle$: Observable<Article | undefined> | undefined

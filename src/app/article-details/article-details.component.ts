@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {selectSelectedArticle} from "../data-access/article.selector";
+import {selectIsMobileView, selectSelectedArticle} from "../data-access/article.selector";
 import {Store} from "@ngrx/store";
 import {state} from "../data-access/article.reducer";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {state} from "../data-access/article.reducer";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArticleDetailsComponent {
-
+  isMobileView$: Observable<boolean> = this.store.select(selectIsMobileView)
   selectedArticles$ = this.store.select(selectSelectedArticle)
 
   constructor(

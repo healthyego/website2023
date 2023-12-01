@@ -12,6 +12,7 @@ import {StoreModule} from "@ngrx/store";
 import {articleReducer} from "./data-access/article.reducer";
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from "@ngrx/effects";
+import { LetDirective } from '@ngrx/component';
 import {ArticleEffects} from "./data-access/article.effects";
 import {CdkVirtualForOf, CdkVirtualScrollViewport, ScrollingModule} from "@angular/cdk/scrolling";
 import {CustomDatePipe} from "./shared/pipes/custom-date.pipe";
@@ -53,9 +54,12 @@ import {YearPipe} from "./shared/pipes/year.pipe";
     CdkVirtualScrollViewport,
     CdkVirtualForOf,
     ScrollingModule,
+    LetDirective,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+
+

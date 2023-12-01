@@ -1,6 +1,8 @@
 import {createAction, props} from '@ngrx/store';
 import {Article} from "../shared/article.type";
 
+export const enableMobileView = createAction('[View] enable mobile');
+
 export const loadArticles = createAction('[Articles] load');
 export const loadArticleById = createAction('[Articles] load by id', props<{ id: string }>());
 export const loadArticlesByFilter = createAction('[Articles] load by filter', props<{ keywords: Set<string> | undefined }>());
