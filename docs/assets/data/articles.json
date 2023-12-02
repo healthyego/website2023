@@ -1,0 +1,251 @@
+[
+  {
+    "id": "I22001",
+    "title": "HEART",
+    "coverUrl": "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+    "keywords": [
+      "music",
+      "video"
+    ],
+    "artists": [
+      "ily_bo",
+      "nelson arthur"
+    ],
+    "description": "\n       <h3>Hello</h3>\n      <p>lets see how well this works?</p>\n      <i>is it any good?</i>\n      <small> I dont know tbh</small>\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\n\n    ",
+    "references": [
+      {
+        "name": "Heart music video",
+        "url": "some/url/to/the/reference"
+      },
+      {
+        "name": "ily_bo Instagram",
+        "url": "some/url/to/the/reference"
+      },
+      {
+        "name": "HEALTHY EGO Instagram",
+        "url": "some/url/to/the/reference"
+      }
+    ],
+    "dates": {
+      "startDate": "2023-11-11T00:00:00.000Z",
+      "endDate": "2023-11-11T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [
+        "https://makeadifference.media/wp-content/uploads/2021/12/AdobeStock_256195492-2.jpeg",
+        "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+        "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+        "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+        "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg"
+      ],
+      "videoUrls": [
+        "https://www.youtube.com/embed/X6rOn6gBUYM",
+        "https://www.youtube.com/embed/X6rOn6gBUYM"
+      ]
+    }
+  },
+  {
+    "id": "I22001",
+    "title": "HEART",
+    "coverUrl": "https://www.cardio.com/hs-fs/hubfs/human%20heart%20illustration.jpeg?width=1200&name=human%20heart%20illustration.jpeg",
+    "keywords": [
+      "music1",
+      "video1"
+    ],
+    "artists": [
+      "ily_bo",
+      "nelson arthur"
+    ],
+    "description": "This is a dummy text that will later be replaced with some nice words!",
+    "references": [
+      {
+        "name": "ref 1",
+        "url": "some/url/to/the/reference"
+      }
+    ],
+    "dates": {
+      "startDate": "11-11-23",
+      "endDate": "11-11-23"
+    },
+    "assets": {
+      "pictureUrls": [],
+      "videoUrls": []
+    }
+  },
+  {
+    "id": "I22001",
+    "title": "HEART",
+    "coverUrl": "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+    "keywords": [
+      "music2",
+      "video2"
+    ],
+    "artists": [
+      "ily_bo",
+      "nelson arthur"
+    ],
+    "description": "This is a dummy text that will later be replaced with some nice words!",
+    "references": [
+      {
+        "name": "ref 1",
+        "url": "some/url/to/the/reference"
+      }
+    ],
+    "dates": {
+      "startDate": "2023-11-11T00:00:00.000Z",
+      "endDate": "2023-11-11T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [],
+      "videoUrls": []
+    }
+  },
+  {
+    "id": "I22001",
+    "title": "HEART",
+    "coverUrl": "https://www.cardio.com/hs-fs/hubfs/human%20heart%20illustration.jpeg?width=1200&name=human%20heart%20illustration.jpeg",
+    "keywords": [
+      "music",
+      "video3"
+    ],
+    "artists": [
+      "ily_bo",
+      "nelson arthur"
+    ],
+    "description": "This is a dummy text that will later be replaced with some nice words!",
+    "references": [
+      {
+        "name": "ref 1",
+        "url": "some/url/to/the/reference"
+      }
+    ],
+    "dates": {
+      "startDate": "2023-11-11T00:00:00.000Z",
+      "endDate": "2023-11-11T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [],
+      "videoUrls": []
+    }
+  },
+  {
+    "id": "I22001",
+    "title": "HEART",
+    "coverUrl": "https://i.pinimg.com/736x/1f/b2/db/1fb2db770c7e6c31d780ee44b4941d6e.jpg",
+    "keywords": [
+      "exhibition",
+      "video2"
+    ],
+    "artists": [
+      "ily_bo",
+      "nelson arthur"
+    ],
+    "description": "This is a dummy text that will later be replaced with some nice words!",
+    "references": [
+      {
+        "name": "ref 1",
+        "url": "some/url/to/the/reference"
+      }
+    ],
+    "dates": {
+      "startDate": "2023-11-11T00:00:00.000Z",
+      "endDate": "2023-11-11T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [],
+      "videoUrls": []
+    }
+  },
+  {
+    "id": "I18001",
+    "title": "Garten",
+    "coverUrl": "https://www.healthyego.studio/source/garten/11.jpeg",
+    "keywords": [
+      "exhibition",
+      "paintings",
+      "DJing"
+    ],
+    "artists": [
+      "Lisa Kull",
+      "Paul Schlenzig",
+      "Bloody9ine",
+      "$uijin"
+    ],
+    "description": "Our second exhibition entitled \"HEALTHY EGO Garten\" took place in July 2018. It highlighted the versatility of our young association: contemporary art - including drawings by Lisa Kull and Paul Schlenzig - was combined with digital light installations, while our artists Bloody9ine and $uijin live produced new tracks. We are especially proud of the venue, which is located in one of the most significant landscape gardens in Germany: The exhibition room, built in 1775, is part of the pleasure ground of the Elector Friedrich Carl von Erthal, who had the former electoral game preserve redesigned into a park.",
+    "references": [
+      {
+        "name": "original website",
+        "url": "https://www.healthyego.studio/veranstaltungen/garten.html"
+      }
+    ],
+    "dates": {
+      "startDate": "2018-07-09T00:00:00.000Z",
+      "endDate": "2018-07-12T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [
+        "https://www.healthyego.studio/source/garten/1.jpeg",
+        "https://www.healthyego.studio/source/garten/2.jpeg",
+        "https://www.healthyego.studio/source/garten/3.jpeg",
+        "https://www.healthyego.studio/source/garten/4.jpeg",
+        "https://www.healthyego.studio/source/garten/5.jpeg",
+        "https://www.healthyego.studio/source/garten/6.jpeg",
+        "https://www.healthyego.studio/source/garten/7.jpeg",
+        "https://www.healthyego.studio/source/garten/8.jpeg",
+        "https://www.healthyego.studio/source/garten/9.jpeg",
+        "https://www.healthyego.studio/source/garten/10.jpeg",
+        "https://www.healthyego.studio/source/garten/11.jpeg",
+        "https://www.healthyego.studio/source/garten/12.jpeg",
+        "https://www.healthyego.studio/source/garten/13.jpeg",
+        "https://www.healthyego.studio/source/garten/14.jpeg"
+      ],
+      "videoUrls": []
+    }
+  },
+  {
+    "id": "I18001",
+    "title": "Garten",
+    "coverUrl": "https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif?crop=780%2C520%2Cx0%2Cy0&width=2200",
+    "keywords": [
+      "exhibition",
+      "paintings",
+      "DJing"
+    ],
+    "artists": [
+      "Lisa Kull",
+      "Paul Schlenzig",
+      "Bloody9ine",
+      "$uijin"
+    ],
+    "description": "Our second exhibition entitled \"HEALTHY EGO Garten\" took place in July 2018. It highlighted the versatility of our young association: contemporary art - including drawings by Lisa Kull and Paul Schlenzig - was combined with digital light installations, while our artists Bloody9ine and $uijin live produced new tracks. We are especially proud of the venue, which is located in one of the most significant landscape gardens in Germany: The exhibition room, built in 1775, is part of the pleasure ground of the Elector Friedrich Carl von Erthal, who had the former electoral game preserve redesigned into a park.",
+    "references": [
+      {
+        "name": "original website",
+        "url": "https://www.healthyego.studio/veranstaltungen/garten.html"
+      }
+    ],
+    "dates": {
+      "startDate": "2018-07-09T00:00:00.000Z",
+      "endDate": "2018-07-12T00:00:00.000Z"
+    },
+    "assets": {
+      "pictureUrls": [
+        "https://www.healthyego.studio/source/garten/1.jpeg",
+        "https://www.healthyego.studio/source/garten/2.jpeg",
+        "https://www.healthyego.studio/source/garten/3.jpeg",
+        "https://www.healthyego.studio/source/garten/4.jpeg",
+        "https://www.healthyego.studio/source/garten/5.jpeg",
+        "https://www.healthyego.studio/source/garten/6.jpeg",
+        "https://www.healthyego.studio/source/garten/7.jpeg",
+        "https://www.healthyego.studio/source/garten/8.jpeg",
+        "https://www.healthyego.studio/source/garten/9.jpeg",
+        "https://www.healthyego.studio/source/garten/10.jpeg",
+        "https://www.healthyego.studio/source/garten/11.jpeg",
+        "https://www.healthyego.studio/source/garten/12.jpeg",
+        "https://www.healthyego.studio/source/garten/13.jpeg",
+        "https://www.healthyego.studio/source/garten/14.jpeg"
+      ],
+      "videoUrls": []
+    }
+  }
+]
