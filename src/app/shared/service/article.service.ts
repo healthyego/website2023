@@ -8,7 +8,7 @@ import {map} from "rxjs/operators";
   providedIn: 'root'
 })
 export class ArticleService {
-  private dataUrl = '../../assets/data/articles.json';
+  private dataUrl = 'https://healthyego.github.io/sources/data/articles.json';
 
   constructor(private http: HttpClient) {
   }
